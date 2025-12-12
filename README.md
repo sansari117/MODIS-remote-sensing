@@ -1,1 +1,2 @@
 # MODIS-remote-sensing
+This repository contains a collection of R scripts/snippets for downloading and processing MODIS products (via MODIStsp) and performing common raster workflows (stacking time series, attaching dates, monthly/yearly aggregation, merging tiles/vectors, resampling, clipping, PCA on rasters, landcover mode, soil + daylength layers, and some ID-join utilities for genotype metadata).

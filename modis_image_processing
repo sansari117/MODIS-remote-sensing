@@ -387,23 +387,3 @@ terra::writeRaster(m_test1,filename = "landcover_igbp_lctype1_2002_2012.tif") #G
 
 
 
-########
-gatk<- read.table('/Users/sansari/Downloads/To_rename_GATK_all_swapped.txt', header = T)
-myfile<- openxlsx::read.xlsx('/Users/sansari/Desktop/athliana/gatk_vcf_id_match.xlsx')
-
-final<- left_join(myfile, gatk, by = join_by(genotypes ==  vcf_id))
-
-
-df1<- read.xlsx("/Users/sansari/Desktop/athliana/gatk_vcf_id_match_joined.xlsx")
-df2<- read.xlsx("/Users/sansari/Desktop/athliana/athaliana_complete_file.xlsx")
-
-#df2$Longitude <- as.numeric(df2$Longitude)  # Convert one variable to numeric
-df2$Latitude <- as.character(df2$Latitude)  # Convert one variable to numeric
-
-
-final1<- left_join(df2, df1, by = join_by(Genotype_id ==  check_with_gatk_renamed_file))
-write.xlsx(final1,"/Users/sansari/Desktop/athliana/athaliana_complete_file_1.xlsx")
-
-athaliana<- read.xlsx('/Users/sansari/Desktop/athliana/athaliana_complete_file.xlsx')
-write.csv(athaliana,"/Users/sansari/Desktop/athliana/athaliana_complete_file.csv", quote = F, row.names = F)
-
